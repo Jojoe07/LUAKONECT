@@ -1,11 +1,6 @@
 import streamlit as st
 
-st.set_page_config(
-    page_title="Organização das sugestões",
-    page_icon="📟",
-)
-    st.title("Calculadora de NPS")
-
+st.title("Calculadora de NPS")
 
 # Inputs
 col1, col2, col3 = st.columns(3)
@@ -50,6 +45,4 @@ else:
    
 st.caption("Desenvolvido por Joenice Almeida")
 st.caption("10/07/2025")
-
-
 
