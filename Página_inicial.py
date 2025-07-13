@@ -4,16 +4,6 @@ st.set_page_config(
     page_title="Organização das sugestões",
     page_icon="📟",
 )
-
-# Cria duas colunas lado a lado
-col1, col2 = st.columns([1, 4])  # Ajuste os números para controlar a largura relativa
-
-# Coluna da imagem
-with col1:
-    st.image("/workspaces/LUAKONECT/nps.webp", width=100)  # Substitua pelo caminho da sua imagem
-
-# Coluna do título
-with col2:
     st.title("Calculadora de NPS")
 
 
