@@ -10,7 +10,7 @@ col1, col2 = st.columns([1, 4])  # Ajuste os números para controlar a largura r
 
 # Coluna da imagem
 with col1:
-    st.image("pages/nps.webp.jpg", width=100)  # Substitua pelo caminho da sua imagem
+    st.image("nps.webp.jpg", width=100)  # Substitua pelo caminho da sua imagem
 
 # Coluna do título
 with col2:
