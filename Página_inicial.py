@@ -9,7 +9,7 @@ col1, col2 = st.columns([1, 4])  # Ajuste os números para controlar a largura r
 
 # Coluna da imagem
 with col1:
-    st.image("/workspaces/LUAKONECT/PAGES/nps.webp", width=100)  # Substitua pelo caminho da sua imagem
+    st.image("PAGES/nps.webp", width=100) # Substitua pelo caminho da sua imagem
 
 # Coluna do título
 with col2:
