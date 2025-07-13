@@ -1,11 +1,49 @@
-("""
+import streamlit as st 
 
-Dicas de como acessar nas ferramentas: 
+st.title("Calculadora de NPS")
 
-- Didatik = cpf + senha = Konecta@2025
-- Intergrall = RK + cpf
-- 360 = BP + senha
-- Genesis  = conta microsoft > collaborte / communicate
+# Inputs
+col1, col2, col3 = st.columns(3)
+with col1:
+    promotores = st.number_input("Promotores", min_value=0, value=0)
+with col2:
+    neutros = st.number_input("Neutros", min_value=0, value=0)
+with col3:
+    detratores = st.number_input("Detratores", min_value=0, value=0)
 
-Para facilitar no atendimento temos a célula baby
-""")
+total_respostas = promotores + neutros + detratores
+
+if total_respostas == 0:
+    st.warning("Insira pelo menos uma resposta para calcular o NPS.")
+else:
+    # Cálculo de porcentagens
+    pct_promotores = promotores / total_respostas
+    pct_detratores = detratores / total_respostas
+    nps = (pct_promotores - pct_detratores) * 100
+
+    # Formatação de sinais
+    sinal_prom = "+" if pct_promotores > 0 else ""
+    sinal_detr = "-" if pct_detratores > 0 else ""
+
+    # Exibição
+    st.markdown("### Resultados:")
+
+    col1, col2, col3 = st.columns(3)
+    with col1:
+        st.success(f"Promotores: {sinal_prom}{pct_promotores:.1%}")
+    with col2:
+        st.info(f"Neutros: {neutros / total_respostas:.1%}")
+    with col3:
+        st.error(f"Detratores: {sinal_detr}{pct_detratores:.1%}")
+
+    # Exibe o NPS final
+    st.markdown("---")
+    cor = "🟢" if nps > 0 else "🔴" if nps < 0 else "⚪"
+    st.metric(label="**NPS Atual**", value=f"{nps:.1f}", delta=f"{nps:.1f}", delta_color="normal")
+    st.markdown(f"{cor} NPS")
+
+   
+st.caption("Desenvolvido por Joenice Almeida")
+st.caption("10/07/2025")
+
+
