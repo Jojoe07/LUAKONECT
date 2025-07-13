@@ -5,7 +5,15 @@ st.set_page_config(
     page_icon="📟",
 )
 
-st.title("Calculadora de NPS")
+col1, col2 = st.columns([1, 4])  # Ajuste os números para controlar a largura relativa
+
+# Coluna da imagem
+with col1:
+    st.image("pages/nps.webp", width=100)  # Substitua pelo caminho da sua imagem
+
+# Coluna do título
+with col2:
+    st.title("Calculadora de NPS")
 
 # Inputs
 col1, col2, col3 = st.columns(3)
